@@ -1,3 +1,5 @@
+// get selected text
+
 function getSelectionText() {
     var text = "";
     if (window.getSelection) {
@@ -5,34 +7,42 @@ function getSelectionText() {
     } else if (document.selection && document.selection.type != "Control") {
         text = document.selection.createRange().text;
     }
+   
+    text = text.replace(/\s+/g, ' '); // remove multiple whitespaces
     return text;
 }
 
 var mouseX;
 var mouseY;
 
+// use the mouse coordinates to set button position
 jQuery(document).mousemove(function (e) {
     mouseX = e.pageX;
     mouseY = e.pageY - 10;
 });
 
 jQuery(document).ready(function ($) {
+    
+  // put the button just after the body tag
     $('body').prepend('<a id="tbutton"><img src="' + plicon.plugin_icon + '" width="35px"></a>');
     
     $('#tbutton').mouseup(function (e) {
         $('#tbutton').hide();
     });
     
+  // clear the button after user click
     $('body').click(function() {
       if( $('#tbutton').is(':visible') && getSelectionText() == "" ) {
        $('#tbutton').hide();
      }
     });
     
+  // don't show the twitter button on link click  
     $('a').click(function() {
        $('#tbutton').hide();
     });
     
+  // show the twitter share as a popup  
     $('#tbutton').click(function(event) {
         var width  = 575,
             height = 400,
@@ -49,6 +59,7 @@ jQuery(document).ready(function ($) {
 
         return false;
       });
+      
     
     $('div,p').mouseup(function (e) {
         if (getSelectionText() != "") {
