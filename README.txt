@@ -22,7 +22,7 @@ Well, there is, and here it is. TweetEverything allows tweeting highlighted text
 
 == Developer Documentation: ==
 
-Want to contribute? Visit [TweetEverything on GitHub](https://github.com/mapteo "TweetEverything on GitHub").
+Want to contribute? Visit [TweetEverything on GitHub](https://github.com/mapteo/TweetEverything "TweetEverything on GitHub").
 
 == Screenshots ==
 
