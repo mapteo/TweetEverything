@@ -1,4 +1,4 @@
-// get selected text
+// get highlighted text
 
 function getSelectionText() {
   var text = "";
