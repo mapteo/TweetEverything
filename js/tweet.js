@@ -30,14 +30,13 @@ jQuery(document).ready(function ($) {
     $('#tbutton').hide();
   });
   
-// clear the button after user click
+// Disable twitter button after user click 
   $('body').click(function() {
     if( $('#tbutton').is(':visible') && getSelectionText() == "" ) {
       $('#tbutton').hide();
    }
   });
-  
-// don't show the twitter button on link click  
+
   $('a').click(function() {
     $('#tbutton').hide();
   });
